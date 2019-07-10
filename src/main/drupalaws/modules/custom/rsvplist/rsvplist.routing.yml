@@ -1,0 +1,8 @@
+#Creates accesible URL for module for front end for all users
+rsvplist.form:
+  path: '/rsvplist'
+  defaults:
+    _form: '\Drupal\rsvplist\Form\RSVPForm'
+    _title: 'RSVP to this Event'
+  requirements:
+    _access: 'TRUE'

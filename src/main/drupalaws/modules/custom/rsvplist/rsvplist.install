@@ -1,0 +1,54 @@
+<?php
+//file creates table and fields in DB
+/**
+ * Implements hook_schema().
+ *
+ */
+function rsvplist_schema() { //.install runs for the first time we install a module
+  $schema['rsvplist'] = array( //rsvplist is a table, id uid etc are fields
+    'description' => 'Stores email, timestamp, nid and uid for an rsvp',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE, //can hold a larger positive value, and no negative value. 
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The {users}.uid that added this rsvp.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'fname' => array(
+        'description' => 'User\'s first name.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+	  'lname' => array(
+        'description' => 'User\'s last name.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'mail' => array(
+        'description' => 'User\'s email address.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp for when rsvp was created.',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

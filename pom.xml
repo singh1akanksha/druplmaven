@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.myproj.app</groupId>
   <artifactId>druplmaven</artifactId>
-  <packaging>jar</packaging>
+  <packaging>zip</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>druplmaven</name>
   <url>http://maven.apache.org</url>
